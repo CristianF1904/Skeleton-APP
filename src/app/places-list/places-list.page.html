@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>placesList</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <div *ngFor="let place of getPlaces">
+      <ion-card>
+        <img alt="Silhouette of mountains" src="{{place.foto}}" />
+        <ion-card-header>
+          <ion-card-title>Nombre: {{place.nombrePla}}</ion-card-title>
+          <ion-card-subtitle>Hoteles Cercas: {{place.hoteles}}</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Comentarios: {{place.comentarios}}
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-list>
+  <ion-button expand="block" color="warning" [routerLink]="['/home']">Volver</ion-button>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button [routerLink]="['/place-form']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
